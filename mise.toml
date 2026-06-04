@@ -1,0 +1,5 @@
+[tasks.build]
+run = "typst compile resume.typ --input email=$EMAIL --input phone=$PHONE"
+
+[tools]
+typst = "0.14.2"
