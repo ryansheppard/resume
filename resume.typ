@@ -21,7 +21,7 @@
 #let jobs = (
   (
     company: [Chicory],
-    roles: ([Senior DevOps Engineer],),
+    role: [Senior DevOps Engineer],
     start: [Aug. 2023],
     bullets: (
       [Designed and built a production OAuth2 authorization service using Ory Hydra, enabling single sign-on and machine-to-machine token issuance across internal services, consolidating disparate auth solutions],
@@ -35,7 +35,7 @@
   ),
   (
     company: [RapidSOS],
-    roles: ([SRE], [SRE II], [Senior Site Reliability Engineer]),
+    role: [Senior Site Reliability Engineer (promoted from SRE)],
     start: [Nov. 2020],
     end: [Aug. 2023],
     bullets: (
@@ -49,8 +49,8 @@
   ),
   (
     company: [Chicory],
-    roles: ([DevOps Engineer],),
-    start: [Sept. 2019],
+    role: [DevOps Engineer],
+    start: [Sep. 2019],
     end: [Nov. 2020],
     bullets: (
       [Reduced cloud spend 15% by adding additional functionality to an internal service and optimizing costly API calls],
@@ -61,26 +61,26 @@
   ),
   (
     company: [Nielsen],
-    roles: ([Site Reliability Engineer],),
-    start: [June 2018],
+    role: [Site Reliability Engineer],
+    start: [Jun. 2018],
     end: [Aug. 2019],
     bullets: (
       [Implemented Prometheus and Grafana on a global scale using Thanos, allowing for a wider range of monitoring and alerting on applications across 550+ bare metal servers and 1500+ exporters],
-      [Created custom Prometheus exporters in Python and Go to observe both in house applications and existing applications such as Druid],
+      // [Created custom Prometheus exporters in Python and Go to observe both in house applications and existing applications such as Druid],
       [Created a highly available infrastructure for Hashicorp Vault, as well as implemented best practices for secret management and PKI],
       [Implemented Consul for service discovery, creating 10 clusters with approximately 3,000 services total],
     ),
   ),
 )
 
-#let work(company, roles: (), start, end: [Present], bullets: ()) = [
-  *#company*, #text(style: "italic")[#roles.join([, ])] #h(1fr) #start -- #end
+#let work(company, role, start, end: [Present], bullets: ()) = [
+  *#company*, #text(style: "italic")[#role] #h(1fr) #start -- #end
   #for bullet in bullets [ - #bullet ]
 ]
 
 #for (i, job) in jobs.enumerate() {
   if i > 0 { v(0.3em) }
-  work(job.company, job.start, end: job.at("end", default: [Present]), roles: job.roles, bullets: job.bullets)
+  work(job.company, job.role, job.start, end: job.at("end", default: [Present]), bullets: job.bullets)
 }
 
 #section[EDUCATION]
@@ -108,4 +108,6 @@
 
 #section[SKILLS]
 
-*Technical Skills:* AWS, GCP, Kubernetes, Docker, Terraform, Helm, CircleCI, Datadog, Prometheus, PostgreSQL, Redis, Python, Go
+*Cloud & Infrastructure:* AWS, GCP, Kubernetes, Docker, Terraform, Helm, CircleCI, Datadog, HashiCorp Vault \
+*Data:* PostgreSQL, Redis, BigQuery \
+*Languages:* Python, Go
