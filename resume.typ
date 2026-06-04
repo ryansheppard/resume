@@ -24,10 +24,10 @@
     roles: ([Senior DevOps Engineer],),
     start: [Aug. 2023],
     bullets: (
-      [Designed and built a production OAuth2 authorization service using Ory Hydra, enabling single sign-on and machine-to-machine token issuance across internal services, consolidating and replacing disparate auth solutions],
+      [Designed and built a production OAuth2 authorization service using Ory Hydra, enabling single sign-on and machine-to-machine token issuance across internal services, consolidating disparate auth solutions],
       [Built an infrastructure MCP server exposing Terraform modules, Helm charts, and CircleCI orb documentation as an AI-queryable knowledge base, enabling engineers to self-serve on infrastructure questions and bootstrap new services end-to-end],
       [Migrated \~20 services to shared Helm charts, standardizing deployments and adding testability],
-      [Achieved near-complete infrastructure-as-code coverage across GCP using Terraform and Helm, eliminating manual provisioning and drift],
+      [Achieved near-complete infrastructure-as-code coverage across GCP and AWS using Terraform and Helm, eliminating manual provisioning and drift],
       [Optimized CI/CD pipelines across 25 microservices, reducing runtimes from 15+ minutes to under 5 minutes],
       [Significantly expanded observability by implementing custom metrics, tracing, and structured logging using Datadog, replacing generic monitors with actionable alerts],
       [Modernized Python and Node.js tooling across 17 repos, migrating to uv and pnpm to improve dependency security, install speed, and developer consistency]
@@ -78,7 +78,8 @@
   #for bullet in bullets [ - #bullet ]
 ]
 
-#for job in jobs {
+#for (i, job) in jobs.enumerate() {
+  if i > 0 { v(0.3em) }
   work(job.company, job.start, end: job.at("end", default: [Present]), roles: job.roles, bullets: job.bullets)
 }
 
