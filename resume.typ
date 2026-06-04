@@ -66,7 +66,7 @@
     end: [Aug. 2019],
     bullets: (
       [Implemented Prometheus and Grafana on a global scale using Thanos, allowing for a wider range of monitoring and alerting on applications across 550+ bare metal servers and 1500+ exporters],
-      [Created custom Prometheus exporters in Python and Go to observe both inhouse applications and existing applications such as Druid],
+      [Created custom Prometheus exporters in Python and Go to observe both in house applications and existing applications such as Druid],
       [Created a highly available infrastructure for Hashicorp Vault, as well as implemented best practices for secret management and PKI],
       [Implemented Consul for service discovery, creating 10 clusters with approximately 3,000 services total],
     ),
