@@ -1,0 +1,33 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
+load("@rules_typst//typst:typst.bzl", "typst")
+
+filegroup(
+    name = "carlito",
+    srcs = glob(["fonts/carlito/*.ttf"]),
+)
+
+typst(
+    name = "resume",
+    src = "resume.typ",
+    data = [
+        "contact.local.json",
+        ":carlito",
+    ],
+    env = {
+        "TYPST_FONT_PATHS": "fonts/carlito",
+    },
+)
+
+build_test(
+    name = "build_resume",
+    targets = [":resume"],
+)
+
+sh_test(
+    name = "resume_page_count_test",
+    size = "small",
+    srcs = ["tests/check_page_count.sh"],
+    args = ["$(rootpath :resume)"],
+    data = [":resume"],
+)

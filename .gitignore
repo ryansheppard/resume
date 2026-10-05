@@ -1,2 +1,4 @@
 *.pdf
 mise.local.toml
+bazel-*
+contact.local.json

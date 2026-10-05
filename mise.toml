@@ -1,5 +1,16 @@
 [tasks.build]
-run = "typst compile resume.typ --input email=$EMAIL --input phone=$PHONE ryan_sheppard_resume.pdf"
+depends = ["test"]
+run = [
+  "bazel build //:resume",
+  "install -m 644 bazel-bin/resume.pdf ryan_sheppard_resume.pdf",
+]
+
+[tasks.dev]
+run = "typst watch --ignore-system-fonts --font-path fonts/carlito resume.typ"
+
+[tasks.test]
+run = "bazel test //..."
 
 [tools]
-typst = "0.14.2"
+bazel = "9.2.0"
+typst = "0.15.1"
