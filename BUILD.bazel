@@ -25,6 +25,20 @@ build_test(
 )
 
 sh_test(
+    name = "resume_spelling_test",
+    size = "small",
+    srcs = ["tests/check_spelling.sh"],
+    args = [
+        "$(rootpath resume.typ)",
+        "$(rootpath tests/spelling_words.txt)",
+    ],
+    data = [
+        "resume.typ",
+        "tests/spelling_words.txt",
+    ],
+)
+
+sh_test(
     name = "resume_page_count_test",
     size = "small",
     srcs = ["tests/check_page_count.sh"],
