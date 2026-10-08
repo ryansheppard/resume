@@ -37,6 +37,9 @@
       [Built an MCP server exposing infrastructure documentation, enabling engineers to self-serve on infrastructure questions and bootstrap new services end-to-end],
       bullet(
         enabled: false,
+      )[Introduced feature flagging using Flagd, enabling incremental and canary rollouts],
+      bullet(
+        enabled: false,
       )[Expanded infrastructure-as-code coverage across GCP and AWS using Terraform and Helm, reducing manual provisioning and drift],
       bullet(
         enabled: false,
