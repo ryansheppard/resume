@@ -28,12 +28,12 @@
     start: [Aug. 2023],
     bullets: (
       [Own DevOps and platform engineering as the company's only DevOps engineer, supporting infrastructure and the developer platform across 25+ microservices],
-      [Built a real-time bid logging pipeline, providing 100% coverage for near-real-time performance analysis and CPM optimization],
-      [Redesigned a high-volume data processing pipeline, increasing processing frequency 12x, decreasing AWS spend by 25%, and reducing memory usage by 10x],
+      [Built a bid logging pipeline that handles thousands of bids per second and provides 100% coverage for near-real-time performance analysis and CPM optimization],
+      [Redesigned a high-volume data processing pipeline, increasing processing frequency 24x, decreasing AWS spend by 25%, and reducing memory usage by 10x],
       [Optimized CI/CD pipelines across 25 microservices, reducing runtimes from 15+ minutes to under 5 minutes],
       [Migrated \~20 services to shared Helm charts, standardizing deployments and enabling automated chart testing],
       [Built an OAuth2 service using Ory Hydra, consolidating authentication for internal SSO and machine-to-machine access],
-      [Migrating services to a Bazel monorepo to simplify cross-service changes and improve code sharing],
+      [Migrating services to a Bazel monorepo to simplify cross-service changes and standardize build tooling],
       [Built an MCP server exposing infrastructure documentation, enabling engineers to self-serve on infrastructure questions and bootstrap new services end-to-end],
       bullet(
         enabled: false,
