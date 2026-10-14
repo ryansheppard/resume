@@ -27,7 +27,7 @@
     role: [Senior DevOps Engineer],
     start: [Aug. 2023],
     bullets: (
-      [Own DevOps and platform engineering as the company's only DevOps engineer, supporting infrastructure and the developer platform across 25+ microservices],
+      [Own DevOps and platform engineering as the company's only DevOps engineer, while contributing to backend development across 25+ microservices],
       [Built a bid logging pipeline that handles thousands of bids per second and provides 100% coverage for near-real-time performance analysis and CPM optimization],
       [Redesigned a high-volume data processing pipeline, increasing processing frequency 24x, decreasing AWS spend by 25%, and reducing memory usage by 10x],
       [Optimized CI/CD pipelines across 25 microservices, reducing runtimes from 15+ minutes to under 5 minutes],
